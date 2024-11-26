@@ -25,12 +25,13 @@ What I didn't do:
 
 Notes on parameter tuning for the RNN:
 - wider LSTM hidden size (> 64) seems to make the RNN untrainable (i.e. the loss does not decrease significantly). 
-- batch size: batch size does not seem to change the loss much
+- batch size: batch size does not seem to change the learning much
+- multiple LSTM layers: following the paper (https://inria.hal.science/hal-01571345/file/978-3-642-23957-1_29_Chapter.pdf) architecture of 20-12 neurons. Seems to decrease performance slightly. 
+- dropout: added dropout of 0.2 for between LSTM and FC layer. Seems to decrease performance slightly.
 
-The best RNN score is still worse than the default XGBoost score, suggesting the 
+The best RNN score is still worse than the default XGBoost score.
 
 
 ## TODO: 
 - try out a GRU unit (usually trains better and is more stable)
-- smooth out bg values
-- multiple recurrent units (check this paper https://inria.hal.science/hal-01571345/file/978-3-642-23957-1_29_Chapter.pdf for details on architecture)
+- smooth out bg values.
