@@ -31,7 +31,12 @@ Notes on parameter tuning for the RNN:
 
 The best RNN score is still worse than the default XGBoost score.
 
+## iteration 2.1
+- replaced the LSTM layer with a GRU 
+- single GRU layer with 20 neurons, batch 256 and lr 0.005 gets a better score than any LSTM configuration I tried
 
 ## TODO: 
 - try out a GRU unit (usually trains better and is more stable)
 - smooth out bg values.
+- one-hot encode the activity features
+
